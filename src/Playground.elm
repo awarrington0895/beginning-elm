@@ -7,12 +7,11 @@ module Playground exposing
   , arya 
   , sansa 
   , signUp
-  , Tree(..)
-  , exampleTree
   )
 
-import Html
+import Html (Html, text)
 import Regex
+import MyList exposing (..)
 
 type Greeting
   = Howdy
@@ -106,41 +105,39 @@ getAdultAge character =
         else
             Nothing
 
-
--- type MyList a
+-- type Tree a
 --   = Empty
---   | Node a (MyList a)
+--   | Node a (Tree a) (Tree a)
 
--- sum : MyList Int -> Int
--- sum myList =
---   case myList of
---      Empty -> 
---       0
-
---      Node intValue remainingNodes -> 
---       intValue + sum remainingNodes
-
-type Tree a
-  = Empty
-  | Node a (Tree a) (Tree a)
-
-exampleTree : Tree Int
-exampleTree =
-  Node 1
-    (Node 2
-      (Node 4
-        Empty
-        (Node 8 Empty Empty)
-      )
-      (Node 5 Empty Empty)
-    )
-    (Node 3
-      (Node 6 Empty Empty)
-      (Node 7
-        (Node 9 Empty Empty)
-        Empty
-      )
-    )
+-- exampleTree : Tree Int
+-- exampleTree =
+--   Node 1
+--     (Node 2
+--       (Node 4
+--         Empty
+--         (Node 8 Empty Empty)
+--       )
+--       (Node 5 Empty Empty)
+--     )
+--     (Node 3
+--       (Node 6 Empty Empty)
+--       (Node 7
+--         (Node 9 Empty Empty)
+--         Empty
+--       )
+--     )
   
+
+list1: MyList a
+list1 = 
+  Empty
+
+list2 : MyList number
+list2 = 
+  Node 9 Empty
+
+main : Html msg
 main =
-  Html.text (escapeEarth 11.2 7.2)
+  isEmpty list2
+    |> Debug.toString
+    |> text
