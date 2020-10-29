@@ -3,4 +3,7 @@ image:
 
 tasks:
   - init: 'elm make'
-    command: 'echo "Welcome to my elm Playground!"'
+
+vscode:
+  extensions:
+    - elmTooling.elm-ls-vscode@1.5.2:c4SjSdO75JSK2fQR62ntDQ==
