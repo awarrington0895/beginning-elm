@@ -6,7 +6,7 @@ FROM gitpod/workspace-full
 #
 # More information: https://www.gitpod.io/docs/config-docker/
 WORKDIR /workspace
-RUN ["curl -L -o elm.gz https://github.com/elm/compiler/releases/download/0.19.1/binary-for-linux-64-bit.gz"]
-RUN ["gunzip elm.gz"]
-RUN ["chmod +x elm"]
-RUN ["sudo mv elm /usr/local/bin"]
+RUN curl -L -o elm.gz https://github.com/elm/compiler/releases/download/0.19.1/binary-for-linux-64-bit.gz \
+    && gunzip elm.gz \
+    && chmod +x elm \
+    && sudo mv elm /usr/local/bin
