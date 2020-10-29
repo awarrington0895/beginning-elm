@@ -9,7 +9,7 @@ module Playground exposing
   , signUp
   )
 
-import Html (Html, text)
+import Html exposing (Html, text)
 import Regex
 import MyList exposing (..)
 
