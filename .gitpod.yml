@@ -7,3 +7,7 @@ tasks:
 vscode:
   extensions:
     - elmTooling.elm-ls-vscode@1.5.2:c4SjSdO75JSK2fQR62ntDQ==
+    - sainnhe.gruvbox-material@6.3.4:xikN80QXpALc8RsrrwRtCg==
+    - equinusocio.vsc-material-theme-icons@1.2.0:JY/GxjbjHN78dpQfT47roQ==
+    - Equinusocio.vsc-material-theme@33.0.0:mv4U0Zql15LMJT2ePk0FEA==
+    - zhuangtongfa.material-theme@3.9.3:L+bizDKGIozpoYYkuSO1Fg==
