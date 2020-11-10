@@ -1,4 +1,4 @@
-module Tree exposing (Tree, empty, insert, map, max, min, singleton, toOrderedList)
+module Tree exposing (Tree, contains, empty, insert, map, max, min, singleton, toOrderedList)
 
 
 type Tree comparable
@@ -77,3 +77,20 @@ map f tree =
 
         Node x left right ->
             Node (f x) (map f left) (map f right)
+
+
+contains : comparable -> Tree comparable -> Bool
+contains v tree =
+    case tree of
+        Empty ->
+            False
+
+        Node x left right ->
+            if x == v then
+                True
+
+            else if v > x then
+                contains v right
+
+            else
+                contains v left
