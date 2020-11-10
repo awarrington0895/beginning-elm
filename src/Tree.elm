@@ -1,4 +1,4 @@
-module Tree exposing (Tree, contains, empty, insert, map, max, min, singleton, toOrderedList)
+module Tree exposing (Tree, fromList, contains, empty, insert, map, max, min, singleton, toOrderedList)
 
 
 type Tree comparable
@@ -94,3 +94,8 @@ contains v tree =
 
             else
                 contains v left
+
+
+fromList : List comparable -> Tree comparable
+fromList list =
+    List.foldl insert empty list
