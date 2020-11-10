@@ -1,7 +1,11 @@
-module Queue exposing (Queue, map, fromList, front, rear, empty, enqueue, dequeue)
+module Queue exposing (Queue, dequeue, empty, enqueue, fromList, front, map, rear)
+
 import Array exposing (Array)
 
-type Queue a = Queue (Array a)
+
+type Queue a
+    = Queue (Array a)
+
 
 empty : Queue a
 empty =
@@ -15,15 +19,13 @@ enqueue value (Queue queue) =
 
 dequeue : Queue a -> Queue a
 dequeue (Queue queue) =
-    Array.slice 1 (Array.length queue) queue 
+    Array.slice 1 (Array.length queue) queue
         |> Queue
-
 
 
 front : Queue a -> Maybe a
 front (Queue queue) =
     Array.get 0 queue
-
 
 
 rear : Queue a -> Maybe a
@@ -37,7 +39,6 @@ fromList list =
         |> Queue
 
 
-
 map : (a -> b) -> Queue a -> Queue b
 map func (Queue queue) =
     Array.map func queue
@@ -45,9 +46,5 @@ map func (Queue queue) =
 
 
 getLastIndex : Array a -> Int
-getLastIndex arr = 
-    (Array.length arr) - 1
-
-
-
-
+getLastIndex arr =
+    Array.length arr - 1
