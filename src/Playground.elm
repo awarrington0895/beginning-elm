@@ -120,29 +120,6 @@ getAdultAge character =
                 Nothing
 
 
-
--- type Tree a
---   = Empty
---   | Node a (Tree a) (Tree a)
--- exampleTree : Tree Int
--- exampleTree =
---   Node 1
---     (Node 2
---       (Node 4
---         Empty
---         (Node 8 Empty Empty)
---       )
---       (Node 5 Empty Empty)
---     )
---     (Node 3
---       (Node 6 Empty Empty)
---       (Node 7
---         (Node 9 Empty Empty)
---         Empty
---       )
---     )
-
-
 list1 : MyList a
 list1 =
     Empty
