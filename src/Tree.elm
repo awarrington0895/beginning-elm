@@ -96,6 +96,23 @@ contains v tree =
                 contains v left
 
 
+search : comparable -> Tree comparable -> Maybe comparable
+search v tree =
+    case tree of
+        Empty ->
+            Nothing
+
+        Node x left right ->
+            if v == x then
+                Just x
+
+            else if v < x then
+                search v left
+
+            else
+                search v right
+
+
 fromList : List comparable -> Tree comparable
 fromList list =
     List.foldl insert empty list
